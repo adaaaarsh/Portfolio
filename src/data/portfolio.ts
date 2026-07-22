@@ -1,5 +1,3 @@
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-
 export const personal = {
   name: "Adarsh Lal Anilal",
   suffix: "CSSGB",
@@ -8,8 +6,8 @@ export const personal = {
   phone: "+1 (817)-822-8442",
   linkedin: "https://linkedin.com/in/adarsh-lal-anilal",
   location: "Arlington, TX",
-  resumeFile: `${basePath}/resume.pdf`,
-  profileImage: `${basePath}/profile.jpg`,
+  resumeFile: "/resume.pdf",
+  profileImage: "/profile.jpg",
   bio: "Industrial Engineer with an MS in Industrial Engineering from the University of Texas at Arlington and a Certified Six Sigma Green Belt. I bring hands-on experience across manufacturing systems, production planning, process optimization, and quality engineering in high-volume automotive and industrial environments. My work spans Lean Manufacturing, Six Sigma DMAIC, simulation modeling, AI-powered manufacturing tools, and applied research — always focused on driving measurable improvements in safety, quality, delivery, throughput, and cost. I'm passionate about solving complex manufacturing challenges through data-driven decision-making and cross-functional collaboration.",
 };
 

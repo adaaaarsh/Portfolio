@@ -13,7 +13,7 @@ export const personal = {
 
 export const stats = [
   { value: 90, suffix: "%", label: "Defect Reduction", icon: "chart" },
-  { value: 10, suffix: "%", label: "Output Increase", icon: "trending" },
+  { value: 34, suffix: "%", label: "Output Increase", icon: "trending" },
   { value: 1, suffix: "", label: "Published Paper", icon: "doc" },
   { value: 12000, suffix: "", label: "Unit Capacity Designed", icon: "factory" },
 ];
@@ -66,7 +66,7 @@ export const experience = [
     location: "Jaipur, Rajasthan",
     period: "Jan 2023 – Apr 2023",
     bullets: [
-      "Increased production output by 10% through systematic bottleneck analysis, time-and-motion studies, line balancing, and assembly-line rebalancing for Backhoe Loader production",
+      "Increased production output by 34% through systematic bottleneck analysis, time-and-motion studies, line balancing, and assembly-line rebalancing for Backhoe Loader production",
       "Created and maintained work standards, SOPs, BOMs, and routings; designed plant and assembly-line layouts, material flow plans, tooling, and fixtures for a 12,000-unit annual capacity",
       "Conducted capacity analysis, work sampling, and process flow auditing using Lean Manufacturing including VSM, Kaizen, and 5S",
       "Reduced supply chain costs through strategic Make vs. Buy analysis on BOM components",
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     ],
     result:
       "Demonstrates ability to build AI-powered tools that solve real manufacturing operations problems — a rare skill at entry level.",
-    github: "#",
+    github: "https://shiftreport-ai-zkteaptguynjycs6k9ztwg.streamlit.app/",
   },
   {
     title: "Defect Reduction using Lean Six Sigma DMAIC",

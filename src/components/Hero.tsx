@@ -150,6 +150,7 @@ export default function Hero() {
         >
           <a
             href={personal.resumeFile}
+            download
             className="btn-gradient group inline-flex items-center gap-2.5 rounded-xl px-8 py-4 text-sm font-semibold text-white"
           >
             <svg

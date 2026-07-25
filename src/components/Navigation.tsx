@@ -80,6 +80,7 @@ export default function Navigation() {
           ))}
           <a
             href={personal.resumeFile}
+            download
             className="btn-gradient ml-4 rounded-lg px-5 py-2 text-sm font-semibold text-white"
           >
             Resume

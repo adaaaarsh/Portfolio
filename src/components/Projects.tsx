@@ -187,7 +187,7 @@ export default function Projects() {
         </AnimateOnScroll>
 
         {/* Featured cards */}
-        <div className="mb-12 grid gap-6 md:grid-cols-3">
+        <div className="mb-12 grid gap-6 md:grid-cols-2">
           {heroProjects.map((project, i) => (
             <AnimateOnScroll key={project.title} delay={i * 120}>
               <button
@@ -236,9 +236,9 @@ export default function Projects() {
         </div>
 
         {/* Other cards */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="flex flex-wrap justify-center gap-4">
           {otherProjects.map((project, i) => (
-            <AnimateOnScroll key={project.title} delay={i * 80}>
+            <AnimateOnScroll key={project.title} delay={i * 80} className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.6875rem)]">
               <button
                 onClick={() => setSelected(project)}
                 className="glass-card project-card group h-full w-full rounded-xl p-5 text-left"

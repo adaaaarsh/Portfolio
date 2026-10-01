@@ -8,13 +8,13 @@ export const personal = {
   location: "Arlington, TX",
   resumeFile: "/resume.pdf",
   profileImage: "/profile.jpg",
-  bio: "Industrial Engineer with an MS in Industrial Engineering from the University of Texas at Arlington and a Certified Six Sigma Green Belt. I bring hands-on experience across manufacturing systems, production planning, process optimization, and quality engineering in high-volume automotive and industrial environments. My work spans Lean Manufacturing, Six Sigma DMAIC, simulation modeling, AI-powered manufacturing tools, and applied research — always focused on driving measurable improvements in safety, quality, delivery, throughput, and cost. I'm passionate about solving complex manufacturing challenges through data-driven decision-making and cross-functional collaboration.",
+  bio: "Industrial, Manufacturing, Quality, and Process Engineer with an MS in Industrial Engineering from the University of Texas at Arlington and a Certified Six Sigma Green Belt, bringing hands-on experience across manufacturing systems, production planning, process optimization, and quality engineering in high-volume automotive and industrial environments. Skilled in Lean Manufacturing, Six Sigma DMAIC, time studies, line balancing, capacity analysis, root cause analysis, FMEA, SPC, CAPA, and continuous improvement. Experienced in developing standard work, manufacturing documentation, SOPs, BOMs, and routings, designing tooling and fixtures, and analyzing KPIs including OEE, defect rate, and cycle time. Currently building multi-agent AI systems for manufacturing operations using agentic AI, LLMs, and hallucination mitigation techniques. Proven ability to drive efficiency improvements of up to 34% and defect reductions of 90% through data-driven decision-making and cross-functional collaboration.",
 };
 
 export const stats = [
   { value: 90, suffix: "%", label: "Defect Reduction", icon: "chart" },
   { value: 34, suffix: "%", label: "Output Increase", icon: "trending" },
-  { value: 1, suffix: "", label: "Published Paper", icon: "doc" },
+  { value: 2, suffix: "", label: "Published Papers", icon: "doc" },
   { value: 12000, suffix: "", label: "Unit Capacity Designed", icon: "factory" },
 ];
 
@@ -41,13 +41,22 @@ export const experience = [
   {
     role: "Research Assistant",
     company: "University of Texas at Arlington",
+    period: "Aug 2026 – Present",
+    bullets: [
+      "Architecting and developing ShiftOps AI, a multi-agent manufacturing shift management system using agentic AI with five specialized agents (extraction, clarification, hallucination detection, verification, escalation) powered by LLMs (Groq/Qwen, OpenAI/GPT)",
+      "Designed a hallucination mitigation pipeline using an independent judge model with verbatim quote verification; unsupported claims are automatically flagged, corrected, and routed to human review before any action is taken",
+      "Integrated real-time CMMS history, equipment registry, sensor data, spare parts inventory, and maintenance records for cross-verification of shift reports across a 16-machine simulated manufacturing plant",
+      "Built interactive CLI pipeline using Rich and Streamlit dashboard for shift report processing, sandbox work order generation, technician assignment, and full audit trail visualization with voice input capability",
+    ],
+  },
+  {
+    role: "Research Assistant",
+    company: "University of Texas at Arlington",
     period: "Aug 2025 – May 2026",
     bullets: [
-      "Developed agent-based simulation models using NetLogo and HubNet to evaluate horizontal collaboration in urban logistics",
-      "Analyzed transportation cost, fleet utilization, service level, and operational trade-off metrics",
-      "Designed an Agent-Based Model (ABM) with capacity constraints and trust dynamics to analyze transportation sharing trade-offs under demand stress",
-      "Delivered analytical insights supporting logistics process improvement and strategic optimization decisions",
-      "Collaborated with cross-functional teams to identify root causes, develop loss profiles, and deliver data-driven recommendations",
+      "Developed agent-based simulation models using NetLogo and HubNet to evaluate process variation, capacity, and operational efficiency under dynamic demand constraints",
+      "Collected, analyzed, and reported production and performance data using KPI analysis, capacity studies, and statistical methods to support continuous improvement and cost reduction",
+      "Collaborated with cross-functional teams to identify root causes, develop loss profiles, and deliver data-driven recommendations to project leadership",
     ],
   },
   {
@@ -56,8 +65,8 @@ export const experience = [
     location: "Sitra, Bahrain",
     period: "June 2023 – Jan 2024",
     bullets: [
-      "Led customer complaint root cause and corrective action investigations through on-the-floor process reviews",
-      "Identified process improvement opportunities and built stakeholder partnerships across operations",
+      "Led customer complaint root cause and corrective action investigations through on-the-floor process reviews, reducing diagnostic time and improving service quality",
+      "Identified process improvement opportunities and built stakeholder partnerships across operations, supporting revenue growth and operational consistency",
     ],
   },
   {
@@ -68,9 +77,9 @@ export const experience = [
     bullets: [
       "Increased production output by 34% through systematic bottleneck analysis, time-and-motion studies, line balancing, and assembly-line rebalancing for Backhoe Loader production",
       "Created and maintained work standards, SOPs, BOMs, and routings; designed plant and assembly-line layouts, material flow plans, tooling, and fixtures for a 12,000-unit annual capacity",
-      "Conducted capacity analysis, work sampling, and process flow auditing using Lean Manufacturing including VSM, Kaizen, and 5S",
-      "Reduced supply chain costs through strategic Make vs. Buy analysis on BOM components",
-      "Collaborated cross-functionally with design engineering and suppliers",
+      "Conducted capacity analysis, work sampling, and process flow auditing to enhance quality, throughput, and cost reduction using Lean Manufacturing and continuous improvement tools",
+      "Reduced supply chain costs through strategic Make vs. Buy analysis on Bill of Materials (BOM) components and Value Stream Mapping (VSM), shortening lead times for new production lines",
+      "Collaborated cross-functionally with design engineering and suppliers, ensuring compliance with safety and quality standards and supporting smooth transitions from design to production",
     ],
   },
   {
@@ -80,7 +89,7 @@ export const experience = [
     period: "May 2022 – June 2022",
     bullets: [
       "Applied Root Cause Analysis (RCA), FMEA, and Corrective & Preventive Action (CAPA) to diagnose and resolve complex quality and equipment failures",
-      "Performed dimensional and functional inspection, troubleshooting, and diagnostics",
+      "Performed dimensional and functional inspection, troubleshooting, and diagnostics, contributing to technical documentation and continuous improvement initiatives",
     ],
   },
 ];
@@ -100,6 +109,25 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    title: "ShiftOps AI",
+    category: "AI in Manufacturing",
+    tools: "Python, Groq/Qwen, OpenAI GPT, Rich CLI, Streamlit, CMMS Integration",
+    summary:
+      "Production-grade multi-agent manufacturing shift management system where a supervisor's informal shift report flows through Extraction, Clarification, Hallucination Check, Verification, and Escalation — each agent an independent LLM-powered module.",
+    hero: true,
+    problem:
+      "Manufacturing shift handovers rely on informal, unstructured notes that lose critical information, delay follow-ups, and lack verification — leading to missed maintenance, safety risks, and operational blind spots.",
+    details: [
+      "Built five specialized agents (Extraction, Clarification, Hallucination Detection, Verification, Escalation) each powered by independent LLMs",
+      "Designed hallucination mitigation pipeline using an independent judge model with verbatim quote verification — unsupported claims are automatically flagged and routed to human review",
+      "Implemented tool-use architecture integrating equipment registry, CMMS, sensor trends, spare parts, and technician scheduling",
+      "Sandbox work orders and notifications ensure no real-world side effects during testing",
+      "Built interactive CLI with Rich and Streamlit dashboard for report processing, work order generation, and full audit trail visualization",
+    ],
+    result:
+      "Demonstrates ability to architect production-grade agentic AI systems for manufacturing — combining LLM orchestration, hallucination mitigation, and real-time data integration.",
+  },
   {
     title: "ShiftReport AI",
     category: "AI in Manufacturing",
@@ -227,16 +255,40 @@ export const projects: Project[] = [
       "Executed sensitivity and scenario analyses to support capital investment decision-making",
     ],
   },
+  {
+    title: "Aircraft Price Prediction using Regression Modeling",
+    category: "Data Analysis / Predictive Modeling",
+    tools: "SAS, Statistical Modeling",
+    summary:
+      "Built regression models using SAS to predict aircraft pricing, validated with comprehensive statistical analysis and hypothesis testing.",
+    details: [
+      "Built Simple and Multiple Linear Regression models to predict aircraft pricing",
+      "Validated with R-squared, ANOVA, residual analysis, and multicollinearity checks",
+      "Applied hypothesis testing to derive actionable valuation insights",
+    ],
+  },
 ];
 
-export const publication = {
-  title:
-    "Comparative Evaluation of Machine Learning Regression Techniques for Predicting CO₂ Emissions in Light-Duty Vehicles",
-  authors: "Anilal, A. L.; Leboulluec, A. K.",
-  journal: "International Journal of Computer Applications (IJCA)",
-  volume: "Vol. 187, No. 114, June 2026",
-  doi: "https://doi.org/10.5120/ijcaccdf069ed3ae",
-};
+export const publications = [
+  {
+    title:
+      "Teaching Supply Chain Collaboration Concepts Using Networked Participatory Agent-Based Modeling",
+    authors: "Shaikh, Md P.; Anilal, A. L.; Kulkarni, P.; Krejci, C.",
+    journal: "IISE Annual Conference Proceedings",
+    volume: "2026, 1–6",
+    doi: "https://doi.org/10.21872/2026IISE_16525",
+  },
+  {
+    title:
+      "Comparative Evaluation of Machine Learning Regression Techniques for Predicting CO₂ Emissions in Light-Duty Vehicles",
+    authors: "Anilal, A. L.; Leboulluec, A. K.",
+    journal: "International Journal of Computer Applications (IJCA)",
+    volume: "Vol. 187, No. 114, June 2026",
+    doi: "https://doi.org/10.5120/ijcaccdf069ed3ae",
+  },
+];
+
+export const publication = publications[1];
 
 export const skills = {
   methodologies: [
@@ -267,16 +319,28 @@ export const skills = {
     "SAS",
     "MATLAB",
     "SAP",
-    "NetLogo",
-    "SolidWorks",
+    "Power BI",
+    "Minitab",
+    "NetLogo (Simulation)",
+    "SolidWorks (CAD/3D Modeling)",
     "AutoCAD",
     "SysML",
     "Streamlit",
     "OpenAI API (GPT-4)",
-    "Microsoft Excel (Advanced)",
-    "Microsoft Access",
-    "Microsoft Project",
+    "Groq API",
+    "Rich (CLI)",
+    "Microsoft Office (Excel-Advanced/Pivot Tables, Access, Word, PowerPoint, Project)",
     "ERP Systems",
+  ],
+  ai: [
+    "Multi-Agent Systems",
+    "Agentic AI Architecture",
+    "LLM Integration (Groq/Qwen, OpenAI/GPT)",
+    "Prompt Engineering",
+    "Hallucination Mitigation",
+    "LLM-as-a-Judge Evaluation",
+    "Tool-Use Orchestration",
+    "CMMS Integration",
   ],
   standards: [
     "ISO 9001",
@@ -289,6 +353,17 @@ export const skills = {
     "Technical Documentation",
     "Safety Compliance",
   ],
+  metrics: [
+    "Cycle Time",
+    "Overall Equipment Effectiveness (OEE)",
+    "Defect Rate",
+    "First Pass Yield (FPY)",
+    "Throughput",
+    "Labor Efficiency",
+    "Cost Savings",
+    "ROI",
+    "NPV/IRR/BCR",
+  ],
   core: [
     "Manufacturing Systems & Process Optimization",
     "Production Planning",
@@ -299,7 +374,9 @@ export const skills = {
     "Plant & Assembly Line Layout",
     "Material Flow Analysis",
     "KPI Analysis",
+    "Production Data Analysis",
     "Data-Driven Decision Making",
+    "Manufacturing Troubleshooting",
     "Cross-Functional Collaboration",
     "Project Management",
   ],
